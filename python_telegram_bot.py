@@ -1,9 +1,9 @@
 from telegram.ext import Updater,CommandHandler
 from Adafruit_IO import Client, Data
-import requests
-x = "Mightynova" #ADAFRUIT_IO_USERNAME
-y = "aio_tCzN32EvL9zVNUgSewbMjfwCE26P" #ADAFRUIT_IO_KEY
-
+import os
+x = os.getenv('x') #ADAFRUIT_IO_USERNAME
+y = os.getenv('y') #ADAFRUIT_IO_KEY
+z = os.getenv('z') #bot's API token
 def turnoff(bot,update):
   chat_id=update.message.chat_id
   bot.send_photo(chat_id,photo='https://www.batteriesplus.com/content/images/product/large/443078.jpg')
@@ -22,7 +22,7 @@ def turnon(bot,update):
   value_send=aio.create_data('botpubgbot',value)
 
 
-u=Updater('1307206400:AAGUsLBb_olBcADJx-6yz5caL1z4nfVjh1s')
+u=Updater(z)
 dp=u.dispatcher
 dp.add_handler(CommandHandler('turnoff',turnoff))
 dp.add_handler(CommandHandler('turnon',turnon))
