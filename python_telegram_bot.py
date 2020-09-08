@@ -22,12 +22,21 @@ def turnon(bot,update):
   aio = Client(x,y)
   value=Data(value=1)
   value_send=aio.create_data('botpubgbot',value)
+  
+  def inmes(bot,update):
+    mess_text=update.message.text
+    if mess_text=='switch on':
+        on(bot,update)
+
+    elif mess_text=='switch off':
+        off(bot,update)
 
 
 u=Updater(z)
 dp=u.dispatcher
 dp.add_handler(CommandHandler('turnoff',turnoff))
 dp.add_handler(CommandHandler('turnon',turnon))
+dp.add_handler(MessageHandler(Filters.text & (~Filters.command),inmes))
 u.start_polling()
 u.idle()
-  
+    
