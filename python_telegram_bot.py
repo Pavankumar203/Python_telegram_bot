@@ -4,6 +4,8 @@ import os
 x = os.getenv('x') #ADAFRUIT_IO_USERNAME
 y = os.getenv('y') #ADAFRUIT_IO_KEY
 z = os.getenv('z') #bot's API token
+
+
 def turnoff(bot,update):
   chat_id=update.message.chat_id
   bot.send_photo(chat_id,photo='https://www.batteriesplus.com/content/images/product/large/443078.jpg')
