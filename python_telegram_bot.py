@@ -22,19 +22,7 @@ def turnon(bot,update):
   aio = Client(x,y)
   value=Data(value=1)
   value_send=aio.create_data('botpubgbot',value)
-  
-  
-def inmes(bot,update):
-  mess_text=update.message.text
-    if mess_text=='turn on':
-      turnon(bot,update)
-      
-    elif mess_text=='turn off':
-      turnoff(bot,udpate)
-  
-    
-
-
+   
 u=Updater(z)
 dp=u.dispatcher
 dp.add_handler(CommandHandler('turnoff',turnoff))
