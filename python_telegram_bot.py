@@ -23,13 +23,14 @@ def turnon(bot,update):
   value=Data(value=1)
   value_send=aio.create_data('botpubgbot',value)
   
+  
   def inmes(bot,update):
     mess_text=update.message.text
-    if mess_text=='switch on':
-        on(bot,update)
-
-    elif mess_text=='switch off':
-        off(bot,update)
+    if mess_text=='turn on':
+      turnon(bot,update)
+      
+    elif mess_text=='turn off':
+      turnoff(bot,udpate)
 
 
 u=Updater(z)
