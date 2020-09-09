@@ -3,7 +3,7 @@ from Adafruit_IO import Client, Data
 import os
 a = os.getenv('a') #ADAFRUIT_IO_USERNAME
 b = os.getenv('b') #ADAFRUIT_IO_KEY
-c = 'os.getenv('c')
+c = os.getenv('c')
 def turnoff(bot,update):
   chat_id=update.message.chat_id
   bot.send_photo(chat_id,photo='https://www.batteriesplus.com/content/images/product/large/443078.jpg')
