@@ -1,9 +1,9 @@
 from telegram.ext import Updater,CommandHandler,MessageHandler,Filters
 from Adafruit_IO import Client, Data
-import requests
-a = "Mightynova" #ADAFRUIT_IO_USERNAME
-b = "aio_uxhf83Xkk23TFTCrzGN0PdiYoy35" #ADAFRUIT_IO_KEY
-c = '1307206400:AAGUsLBb_olBcADJx-6yz5caL1z4nfVjh1s'
+import os
+a = os.getenv('a') #ADAFRUIT_IO_USERNAME
+b = os.getenv('b') #ADAFRUIT_IO_KEY
+c = 'os.getenv('c')
 def turnoff(bot,update):
   chat_id=update.message.chat_id
   bot.send_photo(chat_id,photo='https://www.batteriesplus.com/content/images/product/large/443078.jpg')
