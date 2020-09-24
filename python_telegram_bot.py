@@ -37,4 +37,4 @@ dp.add_handler(CommandHandler('turnon',turnon))
 dp.add_handler(MessageHandler(Filters.text&(~Filters.command),messagein))
 u.start_polling()
 u.idle()
-  
+ 
