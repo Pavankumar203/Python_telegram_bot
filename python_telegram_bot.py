@@ -30,7 +30,7 @@ def messagein(bot,update):
     turnoff(bot,update)  
 
 
-u=Updater(c)
+u=Updater(c,use_context=True)
 dp=u.dispatcher
 dp.add_handler(CommandHandler('turnoff',turnoff))
 dp.add_handler(CommandHandler('turnon',turnon))
